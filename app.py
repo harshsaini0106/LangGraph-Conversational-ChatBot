@@ -7,14 +7,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-# llm = HuggingFaceEndpoint(
-#     repo_id="Qwen/Qwen2.5-7B-Instruct",
-#     task="text-generation",
-#     huggingfacehub_api_token=os.getenv("HUGGINGFACEHUB_API_TOKEN")
-# )
-
-# model = ChatHuggingFace(llm=llm)
-
 CONFIG = {'configurable': {'thread_id': 'thread-1'}}
 
 if 'message_history' not in st.session_state:
@@ -49,6 +41,4 @@ if user_input:
             )
         )
 
-        st.session_state['message_history'].append({'role':'assistant','content':ai_message})
-
-    
+        st.session_state['message_history'].append({'role':'assistant','content':ai_message})  
